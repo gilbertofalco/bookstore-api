@@ -2,11 +2,7 @@ package com.gilberto.bookstore.domain;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
+import javax.persistence.*;
 
 @Entity
 public class Book implements Serializable{
@@ -20,6 +16,9 @@ private static final long serialVersionUID = 1L;
 	private String title;
 	private String author;
 	private String text;
+	
+	@ManyToOne
+	@JoinColumn(name = "category_id")
 	private Category category;
 	public Book() {
 	

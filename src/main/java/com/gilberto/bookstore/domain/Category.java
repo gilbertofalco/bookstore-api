@@ -2,11 +2,7 @@ package com.gilberto.bookstore.domain;
 
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 @Entity	
@@ -20,6 +16,8 @@ public class Category implements Serializable {
 	private String name;
 	private String description;
 	
+	
+	@OneToMany
 	private List<Book> books = new ArrayList<>();
 
 	public Category() {
